@@ -4,6 +4,11 @@ export class UserController {
   async registration(req, res) {}
 
   async check(req, res) {
-    query = req.query;
+    const { id } = req.query; // Declare the query variable using const
+    if (id) {
+      res.json(id);
+    } else {
+      res.json({ message: "Enter id" });
+    }
   }
 }
